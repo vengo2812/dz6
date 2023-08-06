@@ -49,10 +49,17 @@ public class StatsService {
 
     public int belowAverageSales(int[] sales) {
 
-        int middle = 15;
+        int totle = 0;
         int below = 0;
         for (int i = 0; i < sales.length; i++) {
-            if(sales[i] < middle) {
+
+            totle = totle + sales[i];
+        }
+
+        int middle = totle / 12;
+
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] < middle) {
                 below = below + 1;
             }
 
@@ -63,10 +70,18 @@ public class StatsService {
 
     public int aboveAverageSales(int[] sales) {
 
-        int middle = 15;
+        int totle = 0;
         int above = 0;
+
         for (int i = 0; i < sales.length; i++) {
-            if(sales[i] > middle) {
+
+            totle = totle + sales[i];
+        }
+
+        int middle = totle / 12;
+
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > middle) {
                 above = above + 1;
             }
 
