@@ -36,11 +36,8 @@ public class StatsService {
     }
 
     public int averageValueSales(int[] sales) {
+        int totle = amountSales(sales);
 
-        int totle = 0;
-        for (int i = 0; i < sales.length; i++) {
-            totle = totle + sales[i];
-        }
         int middle = totle / 12;
 
         return middle;
@@ -49,14 +46,9 @@ public class StatsService {
 
     public int belowAverageSales(int[] sales) {
 
-        int totle = 0;
+
         int below = 0;
-        for (int i = 0; i < sales.length; i++) {
-
-            totle = totle + sales[i];
-        }
-
-        int middle = totle / 12;
+        int middle = averageValueSales(sales);
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < middle) {
@@ -70,15 +62,8 @@ public class StatsService {
 
     public int aboveAverageSales(int[] sales) {
 
-        int totle = 0;
         int above = 0;
-
-        for (int i = 0; i < sales.length; i++) {
-
-            totle = totle + sales[i];
-        }
-
-        int middle = totle / 12;
+        int middle = averageValueSales(sales);
 
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > middle) {
